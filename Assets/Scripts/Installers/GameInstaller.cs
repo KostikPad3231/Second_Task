@@ -8,7 +8,7 @@ public class GameInstaller : MonoInstaller
         Container.Bind<ColorManager>().FromNew().AsSingle();
         Container.Bind<Board>().FromComponentInHierarchy().AsSingle();
         Container.Bind<GameController>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<Swiping>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<InputController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<CellAnimationController>().FromComponentInHierarchy().AsSingle();
     }
 }

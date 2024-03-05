@@ -21,35 +21,12 @@ public class Board : MonoBehaviour
 
     [Inject] private DiContainer diContainer;
     [Inject] private GameController gameController;
-    [Inject] private Swiping swiping;
+    [Inject] private InputController inputController;
     [Inject] private CellAnimationController cellAnimationController;
 
     private void Start()
     {
-        swiping.SwipeEvent += OnInput;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            OnInput(Vector2.up);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            OnInput(Vector2.left);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            OnInput(Vector2.down);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            OnInput(Vector2.right);
-        }
+        inputController.InputEvent += OnInput;
     }
 
     private void OnInput(Vector2 direction)
